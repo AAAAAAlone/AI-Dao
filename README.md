@@ -1,20 +1,26 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+## 应用核心
 
-# Run and deploy your AI Studio app
+1. **优雅、优雅、还他妈的是优雅！**  
+   现代化交互与视觉优先，不堆砌。只提供有用的信息。
 
-This contains everything you need to run your app locally.
+2. **准确的起卦**  
+   起卦流程与规则严格符合传统，结果可靠。
 
-View your app in AI Studio: https://ai.studio/apps/drive/1M0SWiMX__23F92sa7NBdNwbbHuPUdI6H
+3. **支持现在更常用的报数字等方式**  
+   现代更常见的报数起卦、时间起卦等常用方式均支持。
 
-## Run Locally
+4. **基础的收藏与登录**  
+   Web 与手机都能用；支持免注册、仅本地缓存即可使用。
 
-**Prerequisites:**  Node.js
+5. **可切换万年历 + 用神刑冲合克择日**  
+   万年历可切换为择日模式，快速查看用神的刑冲合克，便于择日。
+
+6. **择日万年历与新手知识**  
+   择日万年历专门为择日场景设计，并附带新手向择日基础说明，方便入门。
 
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## TODO：
+1. AI 解挂、断卦
+3. 八字排盘
+4. 打通起卦与择日
+5. 强化新手知识库的内容和信息交互
