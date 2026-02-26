@@ -3,6 +3,8 @@
 
 六爻起卦与排盘：https://www.muharram.net/liuyao-qigua.html
 
+更多 AI 应用：https://gunzo.cc
+
 
 ## 应用核心
 
