@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>择日万年历-优雅简洁高效的用神择日、应期万年历工具 - 玄空数术</title>
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&display=swap');
+        
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background-color: #fdfaf6;
+            -webkit-tap-highlight-color: transparent;
+            overscroll-behavior: none;
+        }
+
+        /* 日历关系印章水印 - 专属永久类名 */
+        .calendar-relation-stamp {
+            position: absolute;
+            bottom: -10px;
+            right: -5px;
+            font-size: 100px;
+            font-weight: 900;
+            line-height: 1;
+            color: rgba(139, 0, 0, 0.05);
+            pointer-events: none;
+            user-select: none;
+            z-index: 0;
+            font-style: italic;
+            transform: rotate(-10deg);
+        }
+
+        /* PC 端用神卡片倾斜动画 */
+        @media (min-width: 1200px) {
+            .pc-yong-shen-tilt-even {
+                transform: rotate(-3deg) scale(1.02);
+                transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            }
+            .pc-yong-shen-tilt-odd {
+                transform: rotate(3deg) scale(1.02);
+                transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            }
+            .pc-yong-shen-tilt-even:hover, .pc-yong-shen-tilt-odd:hover {
+                transform: rotate(0deg) scale(1.05);
+                z-index: 10;
+            }
+        }
+
+        /* 移动端隐藏滚动条，打造 App 质感 */
+        @media (max-width: 1200px) {
+            *::-webkit-scrollbar {
+                display: none !important;
+            }
+            * {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(139, 0, 0, 0.1); border-radius: 10px; }
+
+        .drawer-transition {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+        .pt-safe { padding-top: env(safe-area-inset-top); }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/Calendar_zeri/index.tsx"></script>
+</body>
+</html>

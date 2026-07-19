@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>八字排盘 · 玄空数术</title>
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="stylesheet" href="/bazi-paipan.css">
+</head>
+<body class="bazi-page bazi-input-page">
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="/" title="玄空数术" aria-label="玄空数术首页">
+        <span class="brand-seal" aria-hidden="true">玄</span>
+        <span class="brand-type"><span class="brand-cn">玄空数术</span><span class="brand-en">XUANKONG ARCHIVE</span></span>
+      </a>
+      <nav class="desktop-nav" aria-label="主导航">
+        <a href="/liuyao-qigua.html" title="六爻排盘">六爻排盘</a>
+        <a href="/calendar.html" title="择日万年历">择日万年历</a>
+        <a class="nav-current-link" href="/bazi-paipan.html" title="八字排盘">八字排盘</a>
+      </nav>
+      <details class="mobile-menu">
+        <summary aria-label="打开导航">☰</summary>
+        <nav class="mobile-menu-list" aria-label="移动端导航">
+          <a href="/liuyao-qigua.html" title="六爻排盘"><span>六爻排盘</span><strong>01</strong></a>
+          <a href="/calendar.html" title="择日万年历"><span>择日万年历</span><strong>02</strong></a>
+          <a href="/bazi-paipan.html" title="八字排盘"><span>八字排盘</span><strong>03</strong></a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main>
+    <header class="subpage-head">
+      <div class="page-shell">
+        <p class="breadcrumbs"><a href="/" title="玄空数术">玄空数术</a>　/　<a href="/calendar.html" title="排盘工具">排盘工具</a>　/　八字排盘</p>
+        <div class="subpage-title-row">
+          <div><p class="eyebrow">BAZI CHART · 子平法</p><h1 class="subpage-title">八字排盘</h1></div>
+          <p class="subpage-intro">按出生日期、时间和地点生成命盘，查看四柱、旬空、大运、流年、流月与神煞。时间校正过程和排盘口径会一并列出，方便核对。</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="page-shell bazi-form-wrap" id="input">
+      <div class="paper-panel">
+        <div class="panel-top">
+          <div><h2>填写出生资料</h2><p>BASE INFORMATION / 出生时间请尽量精确到分钟</p></div>
+        </div>
+        <form class="form-body" id="bazi-form">
+          <div class="form-grid">
+            <div class="field wide"><label for="chart-name">命盘名称</label><input id="chart-name" name="name" value="我的命盘" maxlength="40"><small class="field-note">仅用于区分自己的命盘，可以使用昵称</small></div>
+            <div class="field"><label>性别</label><div class="segmented">
+              <span class="radio-segment"><input id="gender-male" type="radio" name="gender" value="male" checked><label for="gender-male">男</label></span>
+              <span class="radio-segment"><input id="gender-female" type="radio" name="gender" value="female"><label for="gender-female">女</label></span>
+            </div></div>
+            <div class="field"><label>历法</label><div class="segmented">
+              <span class="radio-segment"><input id="calendar-solar" type="radio" name="calendarType" value="solar" checked><label for="calendar-solar">公历</label></span>
+              <span class="radio-segment"><input id="calendar-lunar" type="radio" name="calendarType" value="lunar"><label for="calendar-lunar">农历</label></span>
+            </div></div>
+            <div class="field"><label for="birth-date">出生日期</label><input id="birth-date" name="date" type="date" value="1990-07-12" required><small class="field-note" id="date-help">当前按公历年月日填写</small></div>
+            <div class="field birth-time-field"><label>出生时间</label><div class="segmented time-mode-segmented">
+              <span class="radio-segment"><input id="time-mode-exact" type="radio" name="timeMode" value="exact" checked><label for="time-mode-exact">按时间</label></span>
+              <span class="radio-segment"><input id="time-mode-shichen" type="radio" name="timeMode" value="shichen"><label for="time-mode-shichen">按时辰</label></span>
+            </div><div id="exact-time-wrap"><label class="sr-only" for="birth-time">具体出生时间</label><input id="birth-time" name="time" type="time" value="14:30" required></div><div id="shichen-time-wrap" class="hidden-field"><label class="sr-only" for="birth-shichen">出生时辰</label><select id="birth-shichen"><option value="子时">子时（早子）· 00:00—00:59</option><option value="丑时">丑时 · 01:00—02:59</option><option value="寅时">寅时 · 03:00—04:59</option><option value="卯时">卯时 · 05:00—06:59</option><option value="辰时">辰时 · 07:00—08:59</option><option value="巳时">巳时 · 09:00—10:59</option><option value="午时">午时 · 11:00—12:59</option><option value="未时" selected>未时 · 13:00—14:59</option><option value="申时">申时 · 15:00—16:59</option><option value="酉时">酉时 · 17:00—18:59</option><option value="戌时">戌时 · 19:00—20:59</option><option value="亥时">亥时 · 21:00—22:59</option><option value="晚子时">子初（晚子）· 23:00—23:59</option></select></div><small class="field-note" id="time-help">知道分钟时请按具体时间填写</small></div>
+            <div class="field wide"><label for="birth-province">出生地点</label><div class="location-cascade" id="location-picker"><select id="birth-province" aria-label="出生省份或地区"><option value="">请选择省份或地区</option></select><select id="birth-city" aria-label="出生城市" disabled><option value="">请先选择省份或地区</option></select></div><div class="location-meta"><small class="field-note" id="location-selected-note">先选省份或地区，再选择出生城市</small><button class="text-button" id="custom-location-toggle" type="button">手动填写海外地点</button></div></div>
+          </div>
+
+          <details class="advanced">
+            <summary>排盘口径与时间校正</summary>
+            <div class="advanced-grid">
+              <label class="check-control"><input id="true-solar" type="checkbox" checked>使用真太阳时</label>
+              <label class="check-control"><input id="leap-month" type="checkbox" disabled>农历闰月</label>
+              <div class="advanced-control"><label for="day-boundary">子时换日</label><select id="day-boundary"><option value="23:00" selected>23:00 换日</option><option value="00:00">00:00 换日</option></select></div>
+              <div class="advanced-control"><label for="yun-sect">起运算法</label><select id="yun-sect"><option value="2" selected>精确分钟法</option><option value="1">传统时辰法</option></select></div>
+              <div class="advanced-control hidden-field" id="custom-location-name-wrap"><label for="custom-location-name">地点名称</label><input id="custom-location-name" type="text" maxlength="60" value="自定义地点"></div>
+              <div class="advanced-control hidden-field" id="custom-longitude-wrap"><label for="custom-longitude">出生地经度</label><input id="custom-longitude" type="number" min="-180" max="180" step="0.0001" value="121.4737"></div>
+              <div class="advanced-control hidden-field" id="custom-timezone-wrap"><label for="custom-timezone">IANA 时区</label><select id="custom-timezone"><option>Asia/Shanghai</option><option>Asia/Hong_Kong</option><option>Asia/Taipei</option><option>Asia/Tokyo</option><option>Europe/London</option><option>America/New_York</option><option>Australia/Sydney</option></select></div>
+            </div>
+          </details>
+
+          <div class="button-row" style="margin-top:12px">
+            <button class="primary-button" id="submit-chart" type="submit">生成八字命盘 <span class="button-arrow">↓</span></button>
+            <button class="secondary-button" id="clipboard-import" type="button">从粘贴板智能识别排盘</button>
+          </div>
+          <p class="form-status" id="form-status" role="status" aria-live="polite">已随机填入一组演示资料，修改后即可重新排盘。</p>
+        </form>
+      </div>
+
+      <aside class="form-aside">
+        <div class="aside-note"><span class="index-mark">01 / TIME</span><h3>出生地点为什么重要？</h3><p>地点决定时区、历史夏令时和经度校正。校正后的真太阳时如果跨过时辰或换日边界，时柱或日柱会随之变化。</p></div>
+        <div class="aside-note"><span class="index-mark">02 / CHART</span><h3>命盘会显示什么？</h3><ul><li>四柱、十神、藏干、纳音与旬空</li><li>大运、流年和十二流月</li><li>神煞名称、命中位置与取法</li></ul></div>
+        <div class="aside-note"><span class="index-mark">03 / DATA</span><h3>个人资料说明</h3><p>命盘名称可以填写昵称。姓名、出生地点和精确到分钟的出生时间会用于排盘计算；页面公开展示时会隐藏姓名、具体地点和精确出生时间。登录后主动保存的完整资料仅与本人账号关联。</p></div>
+      </aside>
+    </section>
+
+    <section class="chart-section" id="chart">
+      <div class="page-shell">
+        <div class="result-loading" id="result-loading"><div><strong>正在排盘</strong><span>正在校正出生时间并计算四柱、大运和流月……</span></div></div>
+        <div class="chart-result" id="chart-result" hidden>
+          <div class="chart-toolbar">
+            <div><p class="section-kicker">01 / NATAL CHART</p><h2 id="result-name">我的命盘 · 四柱原局</h2><p id="result-subtitle"></p></div>
+            <div class="chart-actions"><button class="quiet-button" id="edit-chart" type="button">调整资料</button><button class="quiet-button" id="copy-chart" type="button">复制排盘</button><button class="quiet-button" id="save-chart" type="button">保存命盘</button></div>
+          </div>
+
+          <div class="time-correction" id="time-correction"></div>
+
+          <div class="chart-scroll desktop-chart" role="region" aria-label="四柱命盘">
+            <table class="chart-table">
+              <thead><tr><th class="row-label">四柱 / PILLARS</th><th>年柱<br><small>年干支</small></th><th>月柱<br><small>月干支</small></th><th class="day-col">日柱<br><small>日主</small></th><th>时柱<br><small>时干支</small></th></tr></thead>
+              <tbody id="pillar-table-body"></tbody>
+            </table>
+          </div>
+          <div class="mobile-pillars" id="mobile-pillars" aria-label="移动端四柱命盘"></div>
+
+          <div class="stats-grid">
+            <div class="stat-panel"><h3>五行数量</h3><div id="element-stats"></div><p class="stat-note">数量包含四柱天干与地支藏干，用来核对五行出现位置。五行强弱仍需结合月令、透干、根气等条件综合判断。</p></div>
+            <div class="stat-panel"><h3>基础附属信息</h3><div class="objective-grid" id="auxiliary-grid"></div><p class="stat-note">胎元、胎息、命宫和身宫均按当前排盘口径计算。切换子时换日方式后，部分字段可能变化。</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline-block" id="dayun">
+      <div class="page-shell">
+        <div class="section-head">
+          <div><p class="section-kicker">02 / LUCK CYCLES</p><h2 class="section-title">大运 · 流年</h2></div>
+          <p class="section-copy" id="yun-summary">大运顺逆和起运时间将根据出生年干阴阳、性别及相邻节气计算。</p>
+        </div>
+        <div class="timeline-nav" id="dayun-list" aria-label="大运列表"></div>
+        <p class="timeline-hint">选择一柱大运，下方会显示该运覆盖的十个流年。</p>
+        <div class="timeline-detail">
+          <aside class="selected-yun" id="selected-yun"></aside>
+          <div class="year-grid" id="year-grid" aria-label="流年列表"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline-block" id="months" style="padding-top:0">
+      <div class="page-shell">
+        <div class="section-head">
+          <div><p class="section-kicker">03 / MONTHLY CYCLES</p><h2 class="section-title" id="month-title">流月</h2></div>
+          <p class="section-copy">流月从立春后的寅月开始，以惊蛰、清明、立夏等十二个“节”依次切换。每个月均列出真实交节时间。</p>
+        </div>
+        <div class="month-grid" id="month-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="shensha">
+      <div class="page-shell">
+        <div class="section-head">
+          <div><p class="section-kicker">04 / SHENSHA</p><h2 class="section-title">神煞 · 命中依据</h2></div>
+          <p class="section-copy">神煞按照日干、日支、年支和月支逐项查取。每项会显示命中柱位与取法，便于对照核验。</p>
+        </div>
+        <div class="shensha-layout">
+          <div class="shensha-list" id="shensha-list"></div>
+          <aside class="rule-aside"><span class="index-mark" style="color:#dfaaa2">RULES</span><h3>怎么看神煞信息？</h3><p>神煞适合用作命盘信息的补充索引。单个神煞无法独立决定吉凶，阅读时仍要结合四柱组合、大运和流年位置。</p><p id="rule-version"></p></aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ai-reading-section" id="ai-reading">
+      <div class="page-shell">
+        <div class="ai-reading-card">
+          <div><p class="section-kicker">05 / AI READING</p><h2 class="section-title">AI 命理解读</h2><p>后续可在当前命盘基础上，结合四柱、十神、大运与流年生成分层解读。排盘数据会始终保留，方便逐项核对解读依据。</p></div>
+          <button class="secondary-button" type="button" disabled>AI 看盘功能准备中</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="knowledge">
+      <div class="page-shell">
+        <div class="section-head">
+          <div><p class="section-kicker">06 / BAZI BASICS</p><h2 class="section-title">子平八字知识概览</h2></div>
+          <p class="section-copy">第一次查看命盘，可以按照“四柱原局 → 大运 → 流年 → 流月”的顺序阅读，再回到具体字段核对十神、藏干、旬空和神煞。</p>
+        </div>
+        <div class="content-slots">
+          <article class="content-slot"><span class="slot-label">历法基础</span><h3>为什么八字月份以节气划分？</h3><p>年柱以立春为界，月柱以十二个“节”为界。正月从立春开始，随后依次经过惊蛰、清明、立夏等交节点，因此农历初一并不直接决定八字月柱。</p><ul class="knowledge-list"><li>立春决定干支年的切换</li><li>十二节决定月支的切换</li></ul></article>
+          <article class="content-slot"><span class="slot-label">时间校正</span><h3>真太阳时会影响哪些柱？</h3><p>真太阳时根据出生地经度、所在时区、均时差和历史夏令时校正钟表时间。校正后跨过时辰边界时，时柱会变化；跨过换日边界时，日柱也可能变化。</p><ul class="knowledge-list"><li>页面同时保留钟表时间和校正时间</li><li>临界出生时间建议分别排盘核对</li></ul></article>
+          <article class="content-slot"><span class="slot-label">十神入门</span><h3>十神与藏干应该怎么读？</h3><p>十神以日干为中心，描述其他天干与日主之间的五行生克和阴阳关系。地支中还含有一个或多个藏干，藏干十神能够补充地支内部的信息。</p><ul class="knowledge-list"><li>日干在命盘中标为“日主”</li><li>藏干按照地支内部次序列出</li></ul></article>
+          <article class="content-slot"><span class="slot-label">运势时间轴</span><h3>大运、流年、流月有什么区别？</h3><p>大运通常十年一柱，流年以立春切换，流月以十二节切换。三层时间轴共同使用时，可以先定位大运，再选择流年和具体流月。</p><ul class="knowledge-list"><li>交运日期可能落在某个流年中间</li><li>流月从寅月排到次年丑月</li></ul></article>
+        </div>
+
+        <div class="faq-list">
+          <details><summary>出生时间只知道大概时辰，怎么排盘？</summary><p>可以先选择最接近的中间时间排盘，再分别尝试前后两个时辰，重点比较时柱、命宫、身宫和起运时间。出生时间位于时辰边界附近时，建议保留两张命盘继续核对。</p></details>
+          <details><summary>为什么不同排盘网站的结果可能不同？</summary><p>常见差异来自真太阳时、历史夏令时、23:00 或 00:00 换日、起运折算方式以及神煞取法。本站会在命盘顶部列出本次采用的口径。</p></details>
+          <details><summary>农历生日遇到闰月应该怎么填？</summary><p>切换到“农历”后，按农历年月日填写，并勾选“农历闰月”。普通月份无需勾选。日期无效时，页面会提示重新检查。</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-shell">
+      <div class="footer-grid">
+        <div class="footer-brand"><a class="brand" href="/" title="玄空数术" style="color:#fff"><span class="brand-seal">玄</span><span class="brand-type"><span class="brand-cn">玄空数术</span><span class="brand-en">XUANKONG ARCHIVE</span></span></a><p>在线起卦、排盘、择日与命理知识资料库。</p></div>
+        <div class="footer-col"><h3>CHART</h3><a href="#input" title="输入资料">输入资料</a><a href="#chart" title="四柱原局">四柱原局</a><a href="#dayun" title="大运流年">大运流年</a><a href="#months" title="流月">流月</a></div>
+        <div class="footer-col"><h3>TOOLS</h3><a href="/liuyao-qigua.html" title="六爻排盘">六爻排盘</a><a href="/calendar.html" title="择日万年历">择日万年历</a><a href="/bazi-paipan.html" title="八字排盘">八字排盘</a></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 XUANKONG · BAZI CHART</span><span>排盘引擎与规则版本显示在命盘内</span></div>
+    </div>
+  </footer>
+
+  <nav class="mobile-bottom-nav" aria-label="移动端八字导航">
+    <a data-bazi-nav="input" href="/bazi-paipan.html#input" title="输入出生资料"><strong>入</strong><span>资料</span></a>
+    <a data-bazi-nav="chart" href="#chart" title="查看八字命盘"><strong>命</strong><span>命盘</span></a>
+    <a data-bazi-nav="knowledge" href="/bazi-paipan.html#knowledge" title="八字常见问题"><strong>知</strong><span>常识</span></a>
+  </nav>
+
+  <div class="modal-mask" id="clipboard-mask" hidden>
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="clipboard-title">
+      <button class="modal-close" id="clipboard-close" type="button" aria-label="关闭">×</button>
+      <p class="section-kicker">SMART INPUT</p><h2 id="clipboard-title">粘贴出生资料</h2>
+      <p>可粘贴“2000年12月12日10点27分”“2000-02-03-6:36”“二〇〇一年十二月三日下午三点五分”等常见写法。</p>
+      <textarea id="clipboard-text" rows="5" placeholder="在这里粘贴出生年月日与时间"></textarea>
+      <div class="button-row"><button class="primary-button" id="clipboard-confirm" type="button">识别并填入</button><button class="secondary-button" id="clipboard-cancel" type="button">取消</button></div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <script type="module" src="/bazi-paipan.js"></script>
+</body>
+</html>

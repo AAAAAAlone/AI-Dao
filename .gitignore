@@ -1,0 +1,54 @@
+# 依赖
+node_modules/
+*/node_modules/
+
+# 环境变量
+.env
+.env.local
+.env.*.local
+
+# 构建产物
+dist/
+*/dist/
+build/
+
+# Prisma
+/generated/prisma
+*.db
+*.db-journal
+
+# 日志
+*.log
+npm-debug.log*
+
+# 编辑器 / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# 临时文件
+*.tmp
+*.temp
+.cache/
+
+# 测试覆盖率
+coverage/
+
+# TypeScript
+*.tsbuildinfo
+
+# Docker
+docker-deploy/frontend/dist/
